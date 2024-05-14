@@ -7,12 +7,7 @@ type TContainerProps = {
 };
 const Container = ({ children, className }: TContainerProps) => {
   return (
-    <div
-      className={cn(
-        "w-full max-w-[1220px]  mx-auto flex justify-between items-center px-5",
-        className
-      )}
-    >
+    <div className={cn("w-full max-w-[1230px]  mx-auto px-5", className)}>
       {children}
     </div>
   );

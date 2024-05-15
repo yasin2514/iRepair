@@ -1,12 +1,13 @@
 import useScrollGro from "@/hooks/useScrollGro";
 import { motion } from "framer-motion";
+import bgImages from "@/assets/images/trackpad.png";
 const BatteryReplacement = () => {
-  const { componentRef, style } = useScrollGro();
+  const { componentRef, styleScale } = useScrollGro();
   return (
     <motion.div
-      style={style}
+      style={{ ...styleScale, backgroundImage: `url(${bgImages})` }}
       ref={componentRef}
-      className="bg-gray h-[415px] rounded-2xl col-span-12"
+      className="bg-light-gray h-[415px] rounded-2xl col-span-12 bg-no-repeat bg-contain bg-right"
     ></motion.div>
   );
 };

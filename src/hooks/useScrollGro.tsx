@@ -10,11 +10,24 @@ const useScrollGro = () => {
 
   const scaleValues = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
   const opacityValues = useTransform(scrollYProgress, [0, 1], [0, 1]);
-  const style = {
+  const xLeftValues = useTransform(scrollYProgress, [0, 1], [-500, 0]);
+  const xRightValues = useTransform(scrollYProgress, [0, 1], [500, 0]);
+
+  const styleScale = {
     scale: scaleValues,
     opacity: opacityValues,
   };
-  return { componentRef, style };
+  const styleLeftTransform = {
+    scale: scaleValues,
+    opacity: opacityValues,
+    x: xLeftValues,
+  };
+  const styleRightTransform = {
+    scale: scaleValues,
+    opacity: opacityValues,
+    x: xRightValues,
+  };
+  return { componentRef, styleScale, styleLeftTransform, styleRightTransform };
 };
 
 export default useScrollGro;
